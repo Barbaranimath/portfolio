@@ -109,7 +109,7 @@ function HomePage() {
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               <p className="text-base leading-relaxed text-foreground/80 md:text-lg">
-                Étudiante en informatique, sciences des données à l'UQTR,
+                Diplômée en informatique, sciences des données à l'UQTR,
                 avec une expérience concrète en data science, développement web
                 et analyse de données acquise à travers plusieurs stages en
                 entreprise. Je travaille aussi bien sur des pipelines de machine
