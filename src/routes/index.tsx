@@ -19,13 +19,13 @@ function HomePage() {
           {/* Left */}
           <div>
             <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
-              Finissante en Informatique
+              Diplômée en informatique
             </p>
             <h1 className="mt-4 text-5xl font-bold tracking-tight leading-[1.08] md:text-7xl">
               Barbara<br />Saroukou
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Finissante en informatique spécialisée en science des données, avec expérience en automatisation Python, SQL, développement web, tableaux de bord et analytics. Intéressée par les rôles d'analyste de données, BI, data operations et développement d'outils orientés données.
+              Diplômée en informatique, spécialisée en science des données, avec expérience en automatisation Python, SQL, développement web, tableaux de bord et analytics. Intéressée par les rôles d'analyste de données, BI, data operations et développement d'outils orientés données.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
