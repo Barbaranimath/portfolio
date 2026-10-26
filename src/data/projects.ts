@@ -50,8 +50,69 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "auditeur-qualite-donnees",
+    slug: "detection-fraude-bancaire",
     number: "01",
+    category: "Finance · Classification",
+    title: "Détection de Fraude Bancaire",
+    tagline: "Machine Learning sur données déséquilibrées",
+    headline: "Identifier 0,17 % de transactions frauduleuses parmi 284 807 opérations bancaires.",
+    context:
+      "Le dataset Credit Card Fraud Detection (MLG-ULB) contient 284 807 transactions réelles de cartes de crédit européennes dont seulement 492 sont frauduleuses, soit 0,173 % du total. Ce déséquilibre extrême est le vrai défi : un modèle naïf qui prédit \u00ab normal \u00bb à chaque fois afficherait 99,8 % d'accuracy sans jamais détecter une fraude.",
+    approach:
+      "Application de la technique SMOTE (Synthetic Minority Oversampling Technique) pour générer des exemples synthétiques de fraudes et équilibrer les classes d'entraînement. Comparaison rigoureuse de trois algorithmes : Random Forest, XGBoost et Régression Logistique, évalués sur ROC-AUC, précision et rappel.",
+    results:
+      "XGBoost s'impose avec un ROC-AUC de 0,9792 — il distingue correctement une fraude d'une transaction légitime dans 97,9 % des cas. L'analyse SHAP identifie les variables les plus déterminantes et rend le modèle explicable, exigence fondamentale dans le secteur bancaire réglementé.",
+    impact:
+      "Un modèle production-ready capable de réduire massivement les pertes financières tout en respectant les contraintes d'explicabilité réglementaire.",
+    metrics: [
+      { label: "ROC-AUC", value: "0.9792" },
+      { label: "Transactions analysées", value: "284 807" },
+      { label: "Fraudes (déséquilibre)", value: "0.17 %" },
+    ],
+    stack: ["Python", "Scikit-learn", "XGBoost", "SMOTE", "SHAP"],
+    repoUrl: "https://github.com/Barbaranimath/fraude-bancaire",
+    cover: fraude3,
+    images: [
+      { src: fraude1, caption: "Distribution des classes — déséquilibre extrême" },
+      { src: fraude2, caption: "Matrices de confusion et courbes ROC des trois modèles" },
+      { src: fraude3, caption: "Résumé final des performances comparées" },
+    ],
+  },
+  {
+    slug: "nlp-actualites-financieres",
+    number: "02",
+    category: "NLP · Finance",
+    title: "Analyse de Sentiment Financier",
+    tagline: "NLP appliqué aux actualités financières",
+    headline: "Classifier le sentiment des titres financiers — du modèle classique au Transformer.",
+    context:
+      "Dataset Financial PhraseBank : 4 846 titres financiers annotés par des experts. Applications directes en trading algorithmique, veille concurrentielle et gestion de risque. Le NLP appliqué à la finance reste une compétence rare et très recherchée.",
+    approach:
+      "Pipeline complet : nettoyage (ponctuation, stopwords, tokenisation), vectorisation TF-IDF avec bigrammes sur 5 000 features, puis comparaison de Régression Logistique, Random Forest et Naive Bayes. Intégration de FinBERT, Transformer pré-entraîné sur corpus financiers — état de l'art du domaine.",
+    results:
+      "Régression Logistique : 73,40 % d'accuracy. Random Forest : 73,61 %. Naive Bayes : 70,93 %. FinBERT apporte une compréhension contextuelle supérieure des nuances financières. Des wordclouds par sentiment permettent de visualiser les termes associés à chaque polarité.",
+    impact:
+      "Maîtrise d'un pipeline NLP complet, du préprocessing classique à l'intégration de Transformers spécialisés — un savoir-faire directement transposable à la veille financière et aux signaux de marché.",
+    metrics: [
+      { label: "Accuracy (RF)", value: "73.61 %" },
+      { label: "Titres annotés", value: "4 846" },
+      { label: "Modèles comparés", value: "4 (+ FinBERT)" },
+    ],
+    stack: ["Python", "TF-IDF", "Scikit-learn", "FinBERT", "HuggingFace"],
+    repoUrl: "https://github.com/Barbaranimath/nlp-sentiment-financier",
+    cover: nlp5,
+    images: [
+      { src: nlp1, caption: "Wordclouds par polarité de sentiment" },
+      { src: nlp2, caption: "Matrices de confusion" },
+      { src: nlp3, caption: "Courbes ROC" },
+      { src: nlp4, caption: "Top features par classe" },
+      { src: nlp5, caption: "Résumé final des performances" },
+      { src: nlp6, caption: "FinBERT en temps réel — analyse de sentiment sur titres financiers (94–97% de confiance)" },
+    ],
+  },
+  {
+    slug: "auditeur-qualite-donnees",
+    number: "03",
     category: "Gouvernance · Qualité des données",
     title: "Auditeur de Qualité des Données",
     tagline: "Audit automatique de fichiers et détection des renseignements personnels (Loi 25)",
@@ -82,37 +143,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "detection-fraude-bancaire",
-    number: "02",
-    category: "Finance · Classification",
-    title: "Détection de Fraude Bancaire",
-    tagline: "Machine Learning sur données déséquilibrées",
-    headline: "Identifier 0,17 % de transactions frauduleuses parmi 284 807 opérations bancaires.",
-    context:
-      "Le dataset Credit Card Fraud Detection (MLG-ULB) contient 284 807 transactions réelles de cartes de crédit européennes dont seulement 492 sont frauduleuses, soit 0,173 % du total. Ce déséquilibre extrême est le vrai défi : un modèle naïf qui prédit \u00ab normal \u00bb à chaque fois afficherait 99,8 % d'accuracy sans jamais détecter une fraude.",
-    approach:
-      "Application de la technique SMOTE (Synthetic Minority Oversampling Technique) pour générer des exemples synthétiques de fraudes et équilibrer les classes d'entraînement. Comparaison rigoureuse de trois algorithmes : Random Forest, XGBoost et Régression Logistique, évalués sur ROC-AUC, précision et rappel.",
-    results:
-      "XGBoost s'impose avec un ROC-AUC de 0,9792 — il distingue correctement une fraude d'une transaction légitime dans 97,9 % des cas. L'analyse SHAP identifie les variables les plus déterminantes et rend le modèle explicable, exigence fondamentale dans le secteur bancaire réglementé.",
-    impact:
-      "Un modèle production-ready capable de réduire massivement les pertes financières tout en respectant les contraintes d'explicabilité réglementaire.",
-    metrics: [
-      { label: "ROC-AUC", value: "0.9792" },
-      { label: "Transactions analysées", value: "284 807" },
-      { label: "Fraudes (déséquilibre)", value: "0.17 %" },
-    ],
-    stack: ["Python", "Scikit-learn", "XGBoost", "SMOTE", "SHAP"],
-    repoUrl: "https://github.com/Barbaranimath/fraude-bancaire",
-    cover: fraude3,
-    images: [
-      { src: fraude1, caption: "Distribution des classes — déséquilibre extrême" },
-      { src: fraude2, caption: "Matrices de confusion et courbes ROC des trois modèles" },
-      { src: fraude3, caption: "Résumé final des performances comparées" },
-    ],
-  },
-  {
     slug: "churn-assurance",
-    number: "03",
+    number: "04",
     category: "Assurance · Rétention",
     title: "Prédiction du Churn Client",
     tagline: "Anticiper les résiliations dans le secteur des assurances",
@@ -138,35 +170,6 @@ export const projects: Project[] = [
       { src: churn2, caption: "Matrices de confusion et courbes ROC" },
       { src: churn3, caption: "SHAP — variables les plus prédictives du churn" },
       { src: churn4, caption: "Résumé final des performances" },
-    ],
-  },
-  {
-    slug: "readmissions-hospitalieres",
-    number: "04",
-    category: "Santé · Modélisation clinique",
-    title: "Prédiction des Réadmissions Hospitalières",
-    tagline: "Insuffisance cardiaque & survie post-hospitalisation",
-    headline: "Prédire le risque de décès d'un patient cardiaque à partir de son dossier médical.",
-    context:
-      "Dataset Heart Failure Clinical Records publié dans BMC Medical Informatics : 299 patients réels, 12 variables cliniques (âge, fraction d'éjection cardiaque, créatinine sérique, pression artérielle…). Taux de mortalité de 32,11 %, données relativement équilibrées.",
-    approach:
-      "Application de SMOTE pour optimiser la performance, puis comparaison de Random Forest, XGBoost et Régression Logistique. Validation par cross-validation et analyse SHAP pour garantir l'interprétabilité clinique.",
-    results:
-      "Random Forest s'impose comme meilleur modèle avec un ROC-AUC de 0,8954, devant XGBoost (0,8549) et la Régression Logistique (0,8652). L'analyse SHAP confirme les conclusions médicales connues : temps de suivi, créatinine sérique et fraction d'éjection sont les indicateurs les plus déterminants.",
-    impact:
-      "Démonstration d'une capacité à travailler sur des données médicales sensibles avec rigueur, en produisant des prédictions cliniquement interprétables — un prérequis pour toute application en milieu hospitalier.",
-    metrics: [
-      { label: "ROC-AUC", value: "0.8954" },
-      { label: "Patients étudiés", value: "299" },
-      { label: "Mortalité observée", value: "32.11 %" },
-    ],
-    stack: ["Python", "Scikit-learn", "Random Forest", "SHAP"],
-    repoUrl: "https://github.com/Barbaranimath/readmissions-hopital",
-    cover: hospital3,
-    images: [
-      { src: hospital1, caption: "Analyse exploratoire des variables cliniques" },
-      { src: hospital2, caption: "Matrices de confusion et courbes ROC" },
-      { src: hospital3, caption: "Résumé final des performances" },
     ],
   },
   {
@@ -201,35 +204,32 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "nlp-actualites-financieres",
+    slug: "readmissions-hospitalieres",
     number: "06",
-    category: "NLP · Finance",
-    title: "Analyse de Sentiment Financier",
-    tagline: "NLP appliqué aux actualités financières",
-    headline: "Classifier le sentiment des titres financiers — du modèle classique au Transformer.",
+    category: "Santé · Modélisation clinique",
+    title: "Prédiction des Réadmissions Hospitalières",
+    tagline: "Insuffisance cardiaque & survie post-hospitalisation",
+    headline: "Prédire le risque de décès d'un patient cardiaque à partir de son dossier médical.",
     context:
-      "Dataset Financial PhraseBank : 4 846 titres financiers annotés par des experts. Applications directes en trading algorithmique, veille concurrentielle et gestion de risque. Le NLP appliqué à la finance reste une compétence rare et très recherchée.",
+      "Dataset Heart Failure Clinical Records publié dans BMC Medical Informatics : 299 patients réels, 12 variables cliniques (âge, fraction d'éjection cardiaque, créatinine sérique, pression artérielle…). Taux de mortalité de 32,11 %, données relativement équilibrées.",
     approach:
-      "Pipeline complet : nettoyage (ponctuation, stopwords, tokenisation), vectorisation TF-IDF avec bigrammes sur 5 000 features, puis comparaison de Régression Logistique, Random Forest et Naive Bayes. Intégration de FinBERT, Transformer pré-entraîné sur corpus financiers — état de l'art du domaine.",
+      "Application de SMOTE pour optimiser la performance, puis comparaison de Random Forest, XGBoost et Régression Logistique. Validation par cross-validation et analyse SHAP pour garantir l'interprétabilité clinique.",
     results:
-      "Régression Logistique : 73,40 % d'accuracy. Random Forest : 73,61 %. Naive Bayes : 70,93 %. FinBERT apporte une compréhension contextuelle supérieure des nuances financières. Des wordclouds par sentiment permettent de visualiser les termes associés à chaque polarité.",
+      "Random Forest s'impose comme meilleur modèle avec un ROC-AUC de 0,8954, devant XGBoost (0,8549) et la Régression Logistique (0,8652). L'analyse SHAP confirme les conclusions médicales connues : temps de suivi, créatinine sérique et fraction d'éjection sont les indicateurs les plus déterminants.",
     impact:
-      "Maîtrise d'un pipeline NLP complet, du préprocessing classique à l'intégration de Transformers spécialisés — un savoir-faire directement transposable à la veille financière et aux signaux de marché.",
+      "Démonstration d'une capacité à travailler sur des données médicales sensibles avec rigueur, en produisant des prédictions cliniquement interprétables — un prérequis pour toute application en milieu hospitalier.",
     metrics: [
-      { label: "Accuracy (RF)", value: "73.61 %" },
-      { label: "Titres annotés", value: "4 846" },
-      { label: "Modèles comparés", value: "4 (+ FinBERT)" },
+      { label: "ROC-AUC", value: "0.8954" },
+      { label: "Patients étudiés", value: "299" },
+      { label: "Mortalité observée", value: "32.11 %" },
     ],
-    stack: ["Python", "TF-IDF", "Scikit-learn", "FinBERT", "HuggingFace"],
-    repoUrl: "https://github.com/Barbaranimath/nlp-sentiment-financier",
-    cover: nlp5,
+    stack: ["Python", "Scikit-learn", "Random Forest", "SHAP"],
+    repoUrl: "https://github.com/Barbaranimath/readmissions-hopital",
+    cover: hospital3,
     images: [
-      { src: nlp1, caption: "Wordclouds par polarité de sentiment" },
-      { src: nlp2, caption: "Matrices de confusion" },
-      { src: nlp3, caption: "Courbes ROC" },
-      { src: nlp4, caption: "Top features par classe" },
-      { src: nlp5, caption: "Résumé final des performances" },
-      { src: nlp6, caption: "FinBERT en temps réel — analyse de sentiment sur titres financiers (94–97% de confiance)" },
+      { src: hospital1, caption: "Analyse exploratoire des variables cliniques" },
+      { src: hospital2, caption: "Matrices de confusion et courbes ROC" },
+      { src: hospital3, caption: "Résumé final des performances" },
     ],
   },
   {
