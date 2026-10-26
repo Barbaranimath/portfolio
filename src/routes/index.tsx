@@ -19,13 +19,13 @@ function HomePage() {
           {/* Left */}
           <div>
             <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
-              Diplômée en informatique
+              Data Science · Machine Learning
             </p>
             <h1 className="mt-4 text-5xl font-bold tracking-tight leading-[1.08] md:text-7xl">
               Barbara<br />Saroukou
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Diplômée en informatique, spécialisée en science des données, avec expérience en automatisation Python, SQL, développement web, tableaux de bord et analytics. Intéressée par les rôles d'analyste de données, BI, data operations et développement d'outils orientés données.
+              Diplômée en informatique, spécialisation science des données (UQTR). Je construis des modèles de machine learning et de NLP, du nettoyage des données jusqu'à l'application en ligne, avec une attention particulière à la qualité des données et à la protection des renseignements personnels. Je vise un poste en data science.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -49,9 +49,9 @@ function HomePage() {
               {[
                 "Machine Learning",
                 "NLP & Transformers",
+                "Python & SQL",
+                "Qualité des données",
                 "Développement Web",
-                "Analyse de données",
-                "Feature Engineering",
               ].map((d) => (
                 <span key={d} className="flex items-center gap-1.5">
                   <span className="h-1 w-1 rounded-full bg-accent" />
@@ -109,18 +109,19 @@ function HomePage() {
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               <p className="text-base leading-relaxed text-foreground/80 md:text-lg">
-                Diplômée en informatique, sciences des données à l'UQTR,
-                avec une expérience concrète en data science, développement web
-                et analyse de données acquise à travers plusieurs stages en
-                entreprise. Je travaille aussi bien sur des pipelines de machine
-                learning que sur des applications web complètes.
+                Diplômée de l'UQTR en science des données, je mène des projets de
+                bout en bout : préparation des données, feature engineering,
+                modélisation (XGBoost, Random Forest, FinBERT), explicabilité avec
+                SHAP, puis mise en ligne. En stage comme en emploi, j'ai aussi
+                travaillé sur la qualité des données, la conformité Loi 25, des
+                tableaux de bord et l'automatisation en Python et SQL.
               </p>
               <p className="text-base leading-relaxed text-muted-foreground">
-                Mon approche combine rigueur analytique et sens du produit :
-                chaque modèle ou application doit répondre à un vrai besoin,
-                être compréhensible par les équipes métier et livrer des
-                résultats mesurables. Ouverte aux opportunités en data science,
-                développement web, ou des rôles combinant les deux.
+                Mon approche : des données fiables d'abord, parce qu'un modèle ne
+                vaut que ce que valent ses données. Ensuite, des modèles qui
+                répondent à un vrai besoin, que les équipes métier comprennent et
+                dont les résultats se mesurent. Mon objectif : me spécialiser en
+                data science.
               </p>
             </div>
           </div>
