@@ -139,7 +139,7 @@ function HomePage() {
             </h2>
           </div>
           <p className="hidden max-w-xs text-right text-sm text-muted-foreground md:block">
-            Six études de cas end-to-end en data science et machine learning.
+            Sept études de cas end-to-end en data science et machine learning.
           </p>
         </div>
 
