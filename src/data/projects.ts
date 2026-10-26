@@ -27,6 +27,8 @@ import nlp6 from "@/assets/projects/nlp/06_finbert_demo.png";
 
 import simplificateursCover from "@/assets/projects/simplificateurs/cover.png";
 
+import auditeurCover from "@/assets/projects/auditeur/cover.png";
+
 export type Project = {
   slug: string;
   number: string;
@@ -48,8 +50,40 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "detection-fraude-bancaire",
+    slug: "auditeur-qualite-donnees",
     number: "01",
+    category: "Gouvernance · Qualité des données",
+    title: "Auditeur de Qualité des Données",
+    tagline: "Audit automatique de fichiers et détection des renseignements personnels (Loi 25)",
+    headline:
+      "Noter la qualité d'un fichier en quelques secondes et repérer les renseignements personnels à protéger.",
+    context:
+      "Dans une organisation, les fichiers clients circulent avec des doublons, des champs vides, des formats incohérents et des renseignements personnels que personne n'a recensés. Au Québec, la Loi 25 impose de savoir où se trouvent ces renseignements et de les protéger. L'objectif : un outil web qu'un analyste ou un responsable de la conformité peut utiliser sans rien installer.",
+    approach:
+      "Spécification écrite et approuvée avant le code, puis développement en 5 phases. L'outil lit les CSV et Excel (UTF-8 ou latin-1, séparateur virgule ou point-virgule), détecte le type de chaque colonne, puis mesure 5 dimensions : complétude, unicité (sur une colonne clé détectée automatiquement), validité (courriel, téléphone, code postal canadien, date réelle), cohérence des formats et fraîcheur. Les renseignements personnels sont repérés par le nom des colonnes et le format des valeurs, puis masqués à l'écran.",
+    results:
+      "Validé sur 5 000 clients entièrement fictifs avec des erreurs injectées volontairement : l'outil retrouve 100 % des anomalies au chiffre près (150 doublons, 400 courriels manquants, 250 téléphones invalides, 1 500 dates au mauvais format) et 8 colonnes de renseignements personnels sur 8, sans faux positif. Le code est couvert par 151 tests automatisés.",
+    impact:
+      "Un audit qui prenait des heures dans Excel devient un rapport en quelques secondes, avec une liste de corrections classées par nombre d'enregistrements touchés et une recommandation pour chaque colonne sensible — un appui concret aux démarches de gouvernance et de conformité Loi 25.",
+    metrics: [
+      { label: "Anomalies retrouvées", value: "100 %" },
+      { label: "Colonnes sensibles détectées", value: "8 / 8" },
+      { label: "Tests automatisés", value: "151" },
+    ],
+    stack: ["Python", "Pandas", "Streamlit", "Pytest", "Loi 25"],
+    repoUrl: "https://github.com/Barbaranimath/auditeur-qualite-donnees",
+    liveUrl: "https://auditeur-qualite-donnees-bs.streamlit.app",
+    cover: auditeurCover,
+    images: [
+      {
+        src: auditeurCover,
+        caption: "Résultats sur les données de démo : score global, 5 dimensions et points à corriger",
+      },
+    ],
+  },
+  {
+    slug: "detection-fraude-bancaire",
+    number: "02",
     category: "Finance · Classification",
     title: "Détection de Fraude Bancaire",
     tagline: "Machine Learning sur données déséquilibrées",
@@ -78,7 +112,7 @@ export const projects: Project[] = [
   },
   {
     slug: "churn-assurance",
-    number: "02",
+    number: "03",
     category: "Assurance · Rétention",
     title: "Prédiction du Churn Client",
     tagline: "Anticiper les résiliations dans le secteur des assurances",
@@ -108,7 +142,7 @@ export const projects: Project[] = [
   },
   {
     slug: "readmissions-hospitalieres",
-    number: "03",
+    number: "04",
     category: "Santé · Modélisation clinique",
     title: "Prédiction des Réadmissions Hospitalières",
     tagline: "Insuffisance cardiaque & survie post-hospitalisation",
@@ -137,7 +171,7 @@ export const projects: Project[] = [
   },
   {
     slug: "campagnes-marketing",
-    number: "04",
+    number: "05",
     category: "Marketing · ROI & Ciblage",
     title: "Prédiction de Réponse aux Campagnes",
     tagline: "Optimisation du ROI marketing par feature engineering",
@@ -168,7 +202,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nlp-actualites-financieres",
-    number: "05",
+    number: "06",
     category: "NLP · Finance",
     title: "Analyse de Sentiment Financier",
     tagline: "NLP appliqué aux actualités financières",
@@ -200,7 +234,7 @@ export const projects: Project[] = [
   },
   {
     slug: "simplificateurs-financiers",
-    number: "06",
+    number: "07",
     category: "Web · IA conversationnelle",
     title: "Les Simplificateurs Financiers",
     tagline: "Site web pour conseillers financiers avec assistant IA",
