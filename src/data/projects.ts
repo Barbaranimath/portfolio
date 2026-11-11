@@ -260,6 +260,31 @@ export const projects: Project[] = [
       { src: simplificateursCover, caption: "Page d'accueil — Les Simplificateurs Financiers" },
     ],
   },
+  {
+    slug: "novabureau-soutien-conformite-ti",
+    number: "08",
+    category: "Soutien TI · Conformité",
+    title: "NovaBureau — Soutien TI et Conformité",
+    tagline: "Simulation complète du service TI et du programme de conformité d'une PME",
+    headline: "Faire fonctionner, sécuriser et documenter le service TI d'une PME fictive de 20 employés.",
+    context: "Dans une petite entreprise, le soutien TI se fait souvent dans l'urgence : accès accordés sans approbation, comptes oubliés après un départ, sauvegardes jamais testées. NovaBureau est une PME montréalaise fictive de 20 employés, dont 11 en télétravail, qui manipule des renseignements personnels protégés par la Loi 25. L'objectif : bâtir un service TI structuré, mesurable et capable de produire des preuves de conformité.",
+    approach: "Catalogue de 9 services avec délais cibles et matrice de priorité impact × urgence (P1 à P4). Résolution documentée de 5 incidents types (compte verrouillé, poste lent, accès refusé, VPN, hameçonnage). Procédures d'arrivée et de départ, matrice des accès fondée sur le moindre privilège et revue trimestrielle validée par les gestionnaires. Évaluation de 12 contrôles inspirés des CIS Controls v8 et du NIST CSF 2.0. Trois scripts Python analysent 120 billets et comparent l'annuaire à la liste RH pour repérer les comptes orphelins, sans MFA ou hors matrice.",
+    results: "93 % des billets pris en charge dans les délais, 86 % résolus dans le SLA et une satisfaction de 4,4/5. Une tentative d'hameçonnage reçue par 4 employés est contenue en 27 minutes, sans compromission. La revue des accès révèle 6 écarts, dont un compte de stagiaire actif 54 jours après son départ. Le score de conformité passe de 63 % à 92 % avec le plan d'action, sans achat de logiciel.",
+    impact: "Un service TI qui laisse une trace de chaque action : la direction sait où sont les risques et dans quel ordre les corriger, les employés disposent de 7 guides et d'une campagne de sensibilisation, et l'entreprise peut répondre aux demandes de preuves de ses clients.",
+    metrics: [
+      { label: "Prise en charge dans les délais", value: "93 %" },
+      { label: "Score de conformité", value: "63 → 92 %" },
+      { label: "Hameçonnage contenu", value: "27 min" },
+    ],
+    stack: ["Python", "Microsoft 365", "MFA", "RBAC", "CIS Controls", "NIST CSF", "Loi 25"],
+    repoUrl: "https://github.com/Barbaranimath/portfolio-novabureau",
+    cover: "https://raw.githubusercontent.com/Barbaranimath/portfolio/main/src/assets/projects/novabureau/IMG_6017.png",
+    images: [
+      { src: "https://raw.githubusercontent.com/Barbaranimath/portfolio/main/src/assets/projects/novabureau/IMG_6017.png", caption: "Tableau de bord : indicateurs du soutien et score de conformité" },
+      { src: "https://raw.githubusercontent.com/Barbaranimath/portfolio/main/src/assets/projects/novabureau/IMG_6016.png", caption: "Affiche de la campagne de sensibilisation à l'hameçonnage" },
+    ],
+  },
 ];
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
+
